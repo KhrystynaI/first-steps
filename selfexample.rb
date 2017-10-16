@@ -1,12 +1,19 @@
 class Animal
   def all_animal
-  #  super (if "all_animal" method could be in Object it would be work, but now we have Method_missing)
-    puts "all animal have brain"
+    puts "all animals have brain"
     puts self.class
     puts self
   end
 
+def self.foot # only for class
+puts "Some animal has foot"
+end
+
   end
+  Animal.foot
+  h = Animal.new
+  #h.foot -- it will be wrong
+
 a = Animal.new
 a.all_animal
 
@@ -15,7 +22,7 @@ class Cat < Animal
 def choose_name
   puts "Cat has name"
   names = "Tom"
-  self.names # Jim
+  self.names # Jim because is "self"
   puts names # Tom
 end
 
@@ -24,7 +31,7 @@ def names
 end
 
 def all_animal
-  puts "all animal have blood"
+  puts "all animals have blood"
   super
   puts self.class
   puts self
